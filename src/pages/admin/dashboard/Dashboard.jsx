@@ -10,7 +10,6 @@ function Dashboard() {
     const { mode, getAllBlog, deleteBlogs } = context;
     const navigate = useNavigate();
 
-    console.log(getAllBlog)
 
     const logout = () => {
         localStorage.clear('admin');
@@ -41,17 +40,13 @@ function Dashboard() {
 
                         <h2
                             style={{ color: mode === 'dark' ? 'white' : 'black' }} className="font-semibold">
-                            Software Developer
+                            Web Developer
                         </h2>
                         <h2
                             style={{ color: mode === 'dark' ? 'white' : 'black' }} className="font-semibold">Nittishbaboria123@gmail.com
                         </h2>
-                        <h2
-                            style={{ color: mode === 'dark' ? 'white' : 'black' }} className="font-semibold">
-                            <span>Total Blog : </span>  15
-                        </h2>
                         <div className=" flex gap-2 mt-2">
-                            <Link to={'/createblog'}>
+                            <Link to={'/addemail'}>
                                 <div className=" mb-2">
                                     <Button
                                         style={{
@@ -64,7 +59,7 @@ function Dashboard() {
                                         }}
                                         className='px-8 py-2'
                                     >
-                                        Create Blog
+                                        Add email
                                     </Button>
                                 </div>
                             </Link>
@@ -135,7 +130,6 @@ function Dashboard() {
                                 {/* tbody  */}
                                 {getAllBlog.length > 0
                                     ? <> {getAllBlog.map((item, index) => {
-                                        console.log(item);
                                         const {thumbnail, date, id} = item;
                                         return (
                                             <tbody key={index}>

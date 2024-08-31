@@ -7,6 +7,7 @@ import {
     Button,
     Typography,
 } from "@material-tailwind/react";
+import { Timestamp, addDoc, collection } from 'firebase/firestore';
 import toast from 'react-hot-toast';
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 import { fireDb, storage } from '../../../firebase/FirebaseConfig';
@@ -23,13 +24,10 @@ function CreateBlog() {
     const [thumbnail, setthumbnail] = useState();
 
     const [text, settext] = useState('');
-    console.log("Value: ",);
-    console.log("text: ", text);
 
     const navigate = useNavigate();
     
 
-    // console.log(blogs)
 
     const addPost = async () => {
         if(blogs.title === "" || blogs.category === "" || blogs.content === "" || blogs.thumbnail  === ""){
@@ -105,7 +103,7 @@ function CreateBlog() {
                                     : 'black'
                             }}
                         >
-                            Create blog
+                            Add email
                         </Typography>
                     </div>
                 </div>
@@ -211,7 +209,7 @@ function CreateBlog() {
                             : 'rgb(226, 232, 240)'
                     }}
                 >
-                    Send
+                    Add
                 </Button>
 
                 {/* Six Preview Section  */}

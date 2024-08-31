@@ -22,7 +22,7 @@ function App() {
               <Dashboard key={3} />
             </ProtectedRouteForAdmin>
           } />
-          <Route path="/createblog" element={
+          <Route path="/addemail" element={
             <ProtectedRouteForAdmin>
               <CreateBlog key={4} />
             </ProtectedRouteForAdmin>

@@ -1,6 +1,5 @@
 import React from 'react'
 import Navbar from '../navbar/Navbar'
-import toast from 'react-hot-toast';
 
 function Layout({children}) {
   return (
